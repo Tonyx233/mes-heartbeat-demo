@@ -43,7 +43,7 @@ namespace HeartbeatDemo
 
                     Console.WriteLine("[CLIENT] Sent heartbeat.");
 
-                    Thread.Sleep(2000); // 每 2 秒送一次
+                    Thread.Sleep(2000); // Send by every 2 seconds
                 }
                 catch
                 {

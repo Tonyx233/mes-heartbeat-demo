@@ -18,7 +18,7 @@ namespace HeartbeatDemo
 
             Console.WriteLine($"[SERVER] Heartbeat server started on port {port}");
 
-            // 接受連線，使用異步
+            // accept client connections asynchronously
             _listener.BeginAcceptTcpClient(OnClientConnected, null);
         }
 
@@ -29,7 +29,7 @@ namespace HeartbeatDemo
             var client = _listener.EndAcceptTcpClient(ar);
             Console.WriteLine("[SERVER] Client connected.");
 
-            // 允許下一個 client 連線
+            // allow next client connection
             _listener.BeginAcceptTcpClient(OnClientConnected, null);
 
             byte[] buffer = new byte[1024];
